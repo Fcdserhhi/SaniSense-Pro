@@ -17,6 +17,7 @@ We used an MQ135 sensor to monitor odor and air quality. The team developed a we
 To ensure staff accountability, we added a Water Level Sensor. When the "Clean" button is pressed, the system captures a moisture baseline. The Hygiene Score only resets if the sensor detects actual water usage, proving that cleaning took place.
 
 The Dashboard
+![SaniSense Dashboard](dashboard.jpeg)
 The team developed a custom web interface hosted directly on the ESP32. It is a mobile-responsive dashboard with a 1-second refresh rate for:
 1. Occupancy Status: Stalls and Basins.
 2. Environmental Health: Live Odor/Air Quality readings.
