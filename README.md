@@ -52,7 +52,7 @@ To ensure staff accountability, we added a Water Level Sensor. When the "Clean" 
 
 [Watch Demo Video](https://drive.google.com/file/d/1q1M2W3VoHCkC7h8nIcnsIDPd4UZ1Bpyz/view?usp=share_link)
 
-## Dashboard :
+## Dashboard 
 
 ![SaniSense Dashboard](dashboard.jpeg)
 The team developed a custom web interface hosted directly on the ESP32. It is a mobile-responsive dashboard with a 1-second refresh rate for:
