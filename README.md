@@ -34,11 +34,11 @@ We built SaniSense to move from "scheduled" cleaning to an on-demand model. Usin
 ## Run
 The dashboard starts automatically after boot.
 
-## Circuit Diagram :
+## Circuit Diagram 
 
 ![SaniSense Circuit Diagram](circuit_image.png)
 
-## Technical Breakdown :
+## Technical Breakdown 
 1. Precise Occupancy (VL53L0X ToF)
 Instead of standard PIR motion sensors—which fail if a person remains stationary—we used the VL53L0X Time-of-Flight (ToF) sensor. It uses laser ranging to measure exact distance, providing a 100% privacy-compliant way to detect if a stall is occupied.
 2. Traffic Tracking (Dual IR Array)
@@ -49,7 +49,6 @@ We used an MQ135 sensor to monitor odor and air quality. The team developed a we
 To ensure staff accountability, we added a Water Level Sensor. When the "Clean" button is pressed, the system captures a moisture baseline. The Hygiene Score only resets if the sensor detects actual water usage, proving that cleaning took place.
 
 ##  Demo Video
-
 [Watch Demo Video](https://drive.google.com/file/d/1q1M2W3VoHCkC7h8nIcnsIDPd4UZ1Bpyz/view?usp=share_link)
 
 ## Dashboard 
