@@ -6,7 +6,7 @@ Most restrooms are cleaned on a fixed schedule (e.g., every 3 hours), which is i
 The Solution :
 We built SaniSense to move from "scheduled" cleaning to an on-demand model. Using an ESP32 and a suite of sensors, we track real-time usage and hygiene levels to trigger maintenance only when it's actually needed.
 
-Technical Breakdown
+Technical Breakdown :
 1. Precise Occupancy (VL53L0X ToF)
 Instead of standard PIR motion sensors—which fail if a person remains stationary—we used the VL53L0X Time-of-Flight (ToF) sensor. It uses laser ranging to measure exact distance, providing a 100% privacy-compliant way to detect if a stall is occupied.
 2. Traffic Tracking (Dual IR Array)
@@ -16,7 +16,8 @@ We used an MQ135 sensor to monitor odor and air quality. The team developed a we
 4. The Verification Loop (Water Sensor)
 To ensure staff accountability, we added a Water Level Sensor. When the "Clean" button is pressed, the system captures a moisture baseline. The Hygiene Score only resets if the sensor detects actual water usage, proving that cleaning took place.
 
-The Dashboard
+The Dashboard :
+
 ![SaniSense Dashboard](dashboard.jpeg)
 The team developed a custom web interface hosted directly on the ESP32. It is a mobile-responsive dashboard with a 1-second refresh rate for:
 1. Occupancy Status: Stalls and Basins.
