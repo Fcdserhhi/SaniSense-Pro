@@ -38,7 +38,7 @@ The dashboard starts automatically after boot.
 
 ![SaniSense Circuit Diagram](circuit_image.png)
 
-Technical Breakdown :
+## Technical Breakdown :
 1. Precise Occupancy (VL53L0X ToF)
 Instead of standard PIR motion sensors—which fail if a person remains stationary—we used the VL53L0X Time-of-Flight (ToF) sensor. It uses laser ranging to measure exact distance, providing a 100% privacy-compliant way to detect if a stall is occupied.
 2. Traffic Tracking (Dual IR Array)
