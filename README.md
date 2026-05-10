@@ -1,9 +1,9 @@
 ## SaniSense: Smart Restroom Ecosystem
 
-## The Problem  :
+## The Problem  
 Most restrooms are cleaned on a fixed schedule (e.g., every 3 hours), which is inefficient. This model doesn't account for heavy foot traffic or sudden hygiene drops. It leads to wasted resources when bathrooms are clean and poor conditions when they are busy.
  
-## The Solution :
+## The Solution 
 We built SaniSense to move from "scheduled" cleaning to an on-demand model. Using an ESP32 and a suite of sensors, we track real-time usage and hygiene levels to trigger maintenance only when it's actually needed.
 
 ## Hardware Required
