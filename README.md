@@ -49,7 +49,10 @@ We used an MQ135 sensor to monitor odor and air quality. The team developed a we
 To ensure staff accountability, we added a Water Level Sensor. When the "Clean" button is pressed, the system captures a moisture baseline. The Hygiene Score only resets if the sensor detects actual water usage, proving that cleaning took place.
 
 ## Demonstration 
-![SaniSense Demonstraion](demonstraion_video.mp4)
+
+## 🎥 Demo Video
+
+[Watch Demo Video](https://drive.google.com/file/d/1q1M2W3VoHCkC7h8nIcnsIDPd4UZ1Bpyz/view?usp=share_link)
 
 ## Dashboard :
 
