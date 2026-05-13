@@ -64,7 +64,7 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 | Button-2 (Cleaning) | Trigger cleaning mode |
 | Button-3 (Maintenance) | Trigger maintenance mode |
 |Power Adapter 5v | 5v Power Supply |
-| Resistor 220Ω | Limit current flow to LED |
+| 3x Resistor 220Ω | Limit current flow to LED |
 | Breadboards | Connection & power rail |
 | Jumper Wires | Connecting components |
 
