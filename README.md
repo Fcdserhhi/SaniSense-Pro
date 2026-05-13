@@ -77,6 +77,7 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 
 ---
 
+## Firmware updation Steps
 [Watch Firmware Updation Video](https://drive.google.com/file/d/1aEDq1eX4GHtyNtJIiSCHDSIbXzg0b2el/view?usp=drivesdk)
 
 ## Circuit Diagram 
