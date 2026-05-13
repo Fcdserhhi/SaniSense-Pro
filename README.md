@@ -15,34 +15,34 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 ## Features
 
 * **Real-Time Occupancy Monitoring**
-  -Uses IR sensors and VL53L0X distance sensor to detect restroom usage, stall occupancy, and approximate user count in real time.
+  - Uses IR sensors and VL53L0X distance sensor to detect restroom usage, stall occupancy, and approximate user count in real time.
 
 * **Odor & Hygiene Monitoring**
-  -MQ135 gas sensor continuously monitors odor levels inside the restroom to estimate hygiene conditions and detect poor sanitation.
+  - MQ135 gas sensor continuously monitors odor levels inside the restroom to estimate hygiene conditions and detect poor sanitation.
 
 * **Hygiene Compliance Tracking**
-  -Basin-area IR sensing helps determine whether users approached the wash basin after restroom usage, enabling basic handwash compliance estimation.
+  - Basin-area IR sensing helps determine whether users approached the wash basin after restroom usage, enabling basic handwash compliance estimation.
 
 * **Dedicated Cleaning Mode**
-  -A cleaning mode button allows cleaning staff to temporarily pause restroom operation during maintenance and sanitation procedures. The system enters maintenance state and resumes normal monitoring after cleaning verification.
+  - A cleaning mode button allows cleaning staff to temporarily pause restroom operation during maintenance and sanitation procedures. The system enters maintenance state and resumes normal monitoring after cleaning verification.
 
 * **Cleaning Verification System**
-  -Water usage monitoring and odor comparison are used to verify whether cleaning staff actually performed sanitation procedures properly before reopening the restroom.
+  - Water usage monitoring and odor comparison are used to verify whether cleaning staff actually performed sanitation procedures properly before reopening the restroom.
 
 * **Consumable Stock Monitoring**
-  -IR-based dispenser monitoring detects low availability of consumables such as soap, tissue paper, sanitary products, or liquid dispensers.
+  - IR-based dispenser monitoring detects low availability of consumables such as soap, tissue paper, sanitary products, or liquid dispensers.
 
 * **Maintenance Request System**
-  -Dedicated maintenance button allows users or staff to report issues such as clogging, leakage, or restroom malfunction instantly.
+  - Dedicated maintenance button allows users or staff to report issues such as clogging, leakage, or restroom malfunction instantly.
 
 * **SOS Emergency Assistance**
-  -Emergency SOS button can be used by users to request immediate assistance during medical or safety emergencies.
+  - Emergency SOS button can be used by users to request immediate assistance during medical or safety emergencies.
 
 * **Live IoT Dashboard**
-  -A real-time web dashboard displays occupancy status, hygiene score, odor readings, water usage, stock availability, maintenance status, and cleaning alerts.
+  - A real-time web dashboard displays occupancy status, hygiene score, odor readings, water usage, stock availability, maintenance status, and cleaning alerts.
 
 * **Low-Cost Smart Infrastructure Solution**
-  -Designed using ESP32 and affordable sensors, making it suitable for smart city deployments, public facilities, schools, hospitals, malls, and transportation hubs.
+  - Designed using ESP32 and affordable sensors, making it suitable for smart city deployments, public facilities, schools, hospitals, malls, and transportation hubs.
 
 ## Hardware Required
 
@@ -82,7 +82,7 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 
 ![SaniSense Dashboard](dashboard.jpeg)
 
-The team developed a custom web interface hosted directly on the ESP32-WROOM. It is a mobile-responsive dashboard with a 1-second refresh rate for:
+The team developed a custom web interface hosted directly on the ESP32-WROOM. It is a mobile-responsive dashboard with a 3-second refresh rate for:
 1. Occupancy Status: Stalls and Basins.
 2. Environmental Health: Live Odor/Air Quality readings.
 3. Inventory Alerts: Soap and Dispenser levels.
