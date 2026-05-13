@@ -163,7 +163,7 @@ GPIO14 → Button-3(Maintenance) → GND
 Buttons must cross the breadboard center gap.
 
 ## Demo Video
-[Watch Demo Video](https://drive.google.com/file/d/1PJ8JlFGc5pgfCSnwipSoSDediBVXdQJM/view?usp=share_link)
+[Watch Demo Video](https://drive.google.com/file/d/1ncvloYzZUIre2TbvViF189S2QlZajP2y/view?usp=drivesdk)
 
 ## Technical Breakdown 
 1. Precise Occupancy (VL53L0X ToF)
