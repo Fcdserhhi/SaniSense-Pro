@@ -19,10 +19,10 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 | ESP32-WROOM | Main controller |
 | VL53L0X Sensor | Stall occupancy detection |
 | MQ135 Gas Sensor | Air quality monitoring |
-| IR Sensor 1 | Entry detection |
-| IR Sensor 2 | Exit detection |
-| IR Sensor 3 | Basin approach detection |
-| IR Sensor 4 | Consumable stock detection (soap, sanitizer, pads, dispenser items) |
+| IR Sensor-1 | Entry detection |
+| IR Sensor-2 | Exit detection |
+| IR Sensor-3 | Basin approach detection |
+| IR Sensor-4 | Consumable stock detection (soap, sanitizer, pads, dispenser items) |
 | Water Sensor | Cleaning verification |
 | Active Buzzer | Alerts (SOS, cleaning, restock) |
 | Green LED | Vacant indicator |
@@ -33,6 +33,7 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 | Button-3 (Maintenance) | Trigger maintenance mode |
 | Resistor 220Ω | Limit current flow to LED |
 | Breadboards | Connection & power rail |
+| Jumper Wires | Connecting components |
 
 ## Software Required
 
@@ -60,6 +61,47 @@ The dashboard starts automatically after boot.
 
 ![SaniSense Circuit Diagram](circuit_image.png)
 
+## Features
+
+* **Real-Time Occupancy Monitoring**
+  Uses IR sensors and VL53L0X distance sensor to detect restroom usage, stall occupancy, and approximate user count in real time.
+
+* **Odor & Hygiene Monitoring**
+  MQ135 gas sensor continuously monitors odor levels inside the restroom to estimate hygiene conditions and detect poor sanitation.
+
+* **Hygiene Compliance Tracking**
+  Basin-area IR sensing helps determine whether users approached the wash basin after restroom usage, enabling basic handwash compliance estimation.
+
+* **Smart Cleaning Requirement Detection**
+  The system intelligently decides when cleaning is required based on restroom usage count, hygiene score, odor level, and sanitation conditions.
+
+* **Dedicated Cleaning Mode**
+  A cleaning mode button allows cleaning staff to temporarily pause restroom operation during maintenance and sanitation procedures. The system enters maintenance state and resumes normal monitoring after cleaning verification.
+
+* **Cleaning Verification System**
+  Water usage monitoring and odor comparison are used to verify whether cleaning staff actually performed sanitation procedures properly before reopening the restroom.
+
+* **Consumable Stock Monitoring**
+  IR-based dispenser monitoring detects low availability of consumables such as soap, tissue paper, sanitary products, or liquid dispensers.
+
+* **Maintenance Request System**
+  Dedicated maintenance button allows users or staff to report issues such as clogging, leakage, or restroom malfunction instantly.
+
+* **SOS Emergency Assistance**
+  Emergency SOS button can be used by users to request immediate assistance during medical or safety emergencies.
+
+* **Live IoT Dashboard**
+  A real-time web dashboard displays occupancy status, hygiene score, odor readings, water usage, stock availability, maintenance status, and cleaning alerts.
+
+* **Visual & Audio Alerts**
+  LEDs and buzzer provide instant local alerts for restroom occupancy, cleaning requirements, maintenance requests, and emergency situations.
+
+* **Adaptive Hygiene Scoring**
+  The system dynamically updates hygiene score based on restroom usage patterns, odor conditions, basin usage, and cleaning verification results.
+
+* **Low-Cost Smart Infrastructure Solution**
+  Designed using ESP32 and affordable sensors, making it suitable for smart city deployments, public facilities, schools, hospitals, malls, and transportation hubs.
+  
 ## Technical Breakdown 
 1. Precise Occupancy (VL53L0X ToF)
 Instead of standard PIR motion sensors—which fail if a person remains stationary—we used the VL53L0X Time-of-Flight (ToF) sensor. It uses laser ranging to measure exact distance, providing a 100% privacy-compliant way to detect if a stall is occupied.
