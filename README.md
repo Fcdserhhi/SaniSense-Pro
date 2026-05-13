@@ -3,11 +3,13 @@
 ## Problem  
 
 Public restrooms frequently suffer from poor hygiene maintenance, delayed cleaning response, overcrowding, and lack of real-time monitoring. Existing systems rely heavily on manual inspection, making it difficult to ensure cleanliness, hygiene compliance, consumable availability, and timely maintenance.
+
 There is a need for an intelligent, low-cost, real-time restroom monitoring system that can automatically track occupancy, odor levels, hygiene conditions, cleaning activities, and maintenance requirements to improve sanitation standards, resource management, and user safety in public facilities.
  
 ## Solution 
 
 The proposed solution is a **Smart Autonomous Restroom Monitoring System** built using ESP32 and IoT sensors. The system monitors restroom occupancy, odor levels, hygiene conditions, wash basin usage, consumable stock availability, and maintenance requirements in real time.
+
 It uses sensors to detect restroom usage patterns, identify poor hygiene conditions, verify cleaning activities through water usage monitoring, and generate SOS or maintenance alerts when required. A live web dashboard provides real-time analytics and restroom status updates, enabling efficient sanitation management, faster maintenance response, and improved public hygiene standards.
 
 ## Hardware Required
