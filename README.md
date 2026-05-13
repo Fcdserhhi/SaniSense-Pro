@@ -10,7 +10,7 @@ We built SaniSense to move from "scheduled" cleaning to an on-demand model. Usin
 
 | Component | Purpose |
 |---|---|
-| ESP32 | Main controller |
+| ESP32-WROOM | Main controller |
 | VL53L0X Sensor | Stall occupancy detection |
 | MQ135 Gas Sensor | Air quality monitoring |
 | IR Sensor 1 | Entry detection |
