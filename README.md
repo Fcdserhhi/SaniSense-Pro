@@ -31,7 +31,7 @@ We built SaniSense to move from "scheduled" cleaning to an on-demand model. Usin
 | Software | Purpose |
 |---|---|
 | Thonny IDE | Upload and run MicroPython code |
-| MicroPython Firmware | Run Python on ESP32-WROOM |
+| MicroPython Firmware | Run MicroPython on ESP32-WROOM |
 
 ## Installation Steps
 1. Flash MicroPython to ESP32-WROOM
