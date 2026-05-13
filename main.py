@@ -17,7 +17,7 @@ server = socket.socket()
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server.bind(addr)
 server.listen(1)
-server.setblocking(False)
+server.setblocking(False)   
 
 green  = Pin(2,  Pin.OUT)
 red    = Pin(4,  Pin.OUT)
@@ -40,8 +40,8 @@ mq.atten(ADC.ATTN_11DB)
 water = ADC(Pin(35))
 water.atten(ADC.ATTN_11DB)
 
-WATER_MIN = 0
-WATER_MAX = 3200
+WATER_MIN = 0      
+WATER_MAX = 3200   
 
 def water_percent(raw):
     pct = (raw - WATER_MIN) / (WATER_MAX - WATER_MIN) * 100
@@ -180,6 +180,7 @@ beep()
 print("SMART RESTROOM STARTED")
 
 while True:
+
     now = time.ticks_ms()
 
     if time.ticks_diff(now, last_sensors) >= 300:
@@ -224,6 +225,7 @@ while True:
         occupied = False
         red.off(); green.on()
 
+   
     basin_status = "USED"      if basin_ir.value() == 0 else "NOT USED"
     stock_status = "AVAILABLE" if disp_ir.value()  == 0 else "LOW"
 
@@ -270,7 +272,6 @@ while True:
         maintenance_status = "MAINTENANCE REQUIRED"
         beep()
         print("MAINTENANCE")
-
     hygiene_score = clamp(hygiene_score, 0, 100)
 
     if hygiene_score >= 80:
@@ -286,7 +287,7 @@ while True:
         client.settimeout(2.0)
 
         try:
-            client.recv(1024)
+            client.recv(1024)         
         except:
             pass
 
@@ -307,7 +308,7 @@ while True:
         client.sendall(resp)
 
     except OSError:
-        pass
+        pass    
 
     finally:
         if client:
