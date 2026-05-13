@@ -23,9 +23,6 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 * **Hygiene Compliance Tracking**
   Basin-area IR sensing helps determine whether users approached the wash basin after restroom usage, enabling basic handwash compliance estimation.
 
-* **Smart Cleaning Requirement Detection**
-  The system intelligently decides when cleaning is required based on restroom usage count, hygiene score, odor level, and sanitation conditions.
-
 * **Dedicated Cleaning Mode**
   A cleaning mode button allows cleaning staff to temporarily pause restroom operation during maintenance and sanitation procedures. The system enters maintenance state and resumes normal monitoring after cleaning verification.
 
@@ -43,12 +40,6 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 
 * **Live IoT Dashboard**
   A real-time web dashboard displays occupancy status, hygiene score, odor readings, water usage, stock availability, maintenance status, and cleaning alerts.
-
-* **Visual & Audio Alerts**
-  LEDs and buzzer provide instant local alerts for restroom occupancy, cleaning requirements, maintenance requests, and emergency situations.
-
-* **Adaptive Hygiene Scoring**
-  The system dynamically updates hygiene score based on restroom usage patterns, odor conditions, basin usage, and cleaning verification results.
 
 * **Low-Cost Smart Infrastructure Solution**
   Designed using ESP32 and affordable sensors, making it suitable for smart city deployments, public facilities, schools, hospitals, malls, and transportation hubs.
