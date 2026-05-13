@@ -7,17 +7,32 @@ Most restrooms are cleaned on a fixed schedule (e.g., every 3 hours), which is i
 We built SaniSense to move from "scheduled" cleaning to an on-demand model. Using an ESP32 and a suite of sensors, we track real-time usage and hygiene levels to trigger maintenance only when it's actually needed.
 
 ## Hardware Required
-- ESP32
-- VL53L0X Sensor
-- MQ135 Gas Sensor
-- IR Sensors
-- Water Sensor
-- Push Button
-- LEDs
+
+| Component | Purpose |
+|---|---|
+| ESP32 | Main controller |
+| VL53L0X Sensor | Stall occupancy detection |
+| MQ135 Gas Sensor | Air quality monitoring |
+| IR Sensor 1 | Entry detection |
+| IR Sensor 2 | Exit detection |
+| IR Sensor 3 | Basin approach detection |
+| IR Sensor 4 | Dispenser stock detection |
+| Water Sensor | Cleaning verification |
+| Active Buzzer | Alerts (SOS, cleaning, restock) |
+| Green LED | Vacant indicator |
+| Red LED | Occupied indicator |
+| Yellow LED | Warning indicator |
+| SOS Button | Emergency alert |
+| Cleaning Button | Trigger cleaning mode |
+| Maintenance Button | Trigger maintenance mode |
+
 
 ## Software Required
-- Thonny IDE / Arduino IDE
-- MicroPython firmware
+
+| Software | Purpose |
+|---|---|
+| Thonny IDE | Upload and run MicroPython code |
+| MicroPython Firmware | Run Python on ESP32 |
 
 ## Installation Steps
 1. Flash MicroPython to ESP32
