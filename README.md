@@ -74,6 +74,9 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 |---|---|
 | Thonny IDE | Upload and run MicroPython code |
 | MicroPython Firmware | Run MicroPython on ESP32-WROOM |
+
+---
+
 [Watch Firmware Updation Video](https://drive.google.com/file/d/1aEDq1eX4GHtyNtJIiSCHDSIbXzg0b2el/view?usp=drivesdk)
 
 ## Circuit Diagram 
