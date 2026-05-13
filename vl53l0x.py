@@ -1,11 +1,13 @@
+
 import time
 from machine import I2C, Pin
 
-_REG_IDENTIFICATION_MODEL_ID          = 0xC0
+# --- Register Addresses ---
+_REG_IDENTIFICATION_MODEL_ID         = 0xC0
 _REG_VHV_CONFIG_PAD_SCL_SDA_EXTSUP_HV = 0x89
-_REG_MSRC_CONFIG_CONTROL              = 0x60
+_REG_MSRC_CONFIG_CONTROL             = 0x60
 _REG_FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT = 0x44
-_REG_SYSTEM_SEQUENCE_CONFIG           = 0x01
+_REG_SYSTEM_SEQUENCE_CONFIG          = 0x01
 _REG_DYNAMIC_SPAD_NUM_REQUESTED_REF_SPAD = 0x4E
 _REG_DYNAMIC_SPAD_REF_EN_START_OFFSET = 0x4F
 _REG_GLOBAL_CONFIG_REF_EN_START_SELECT = 0xB6
@@ -13,11 +15,11 @@ _REG_SYSTEM_INTERRUPT_CONFIG_GPIO    = 0x0A
 _REG_GPIO_HV_MUX_ACTIVE_HIGH         = 0x84
 _REG_SYSTEM_INTERRUPT_CLEAR          = 0x0B
 _REG_RESULT_INTERRUPT_STATUS         = 0x13
-_REG_SYSRANGE_START                   = 0x00
-_REG_RESULT_RANGE_STATUS              = 0x14
-_REG_I2C_SLAVE_DEVICE_ADDRESS         = 0x8A
-_REG_ALGO_PHASECAL_LIM                = 0x30
-_REG_ALGO_PHASECAL_CONFIG_TIMEOUT     = 0x30
+_REG_SYSRANGE_START                  = 0x00
+_REG_RESULT_RANGE_STATUS             = 0x14
+_REG_I2C_SLAVE_DEVICE_ADDRESS        = 0x8A
+_REG_ALGO_PHASECAL_LIM               = 0x30
+_REG_ALGO_PHASECAL_CONFIG_TIMEOUT    = 0x30
 
 
 class VL53L0X:
@@ -40,10 +42,12 @@ class VL53L0X:
         self.i2c.writeto_mem(self.address, reg, bytes([(value >> 8) & 0xFF, value & 0xFF]))
 
     def _init_sensor(self):
+        # Check model ID
         model_id = self._read_byte(_REG_IDENTIFICATION_MODEL_ID)
         if model_id != 0xEE:
             raise RuntimeError(f"VL53L0X not found! Got model ID: {hex(model_id)}")
 
+        # Set I2C standard mode
         self._write_byte(0x88, 0x00)
         self._write_byte(0x80, 0x01)
         self._write_byte(0xFF, 0x01)
@@ -53,29 +57,37 @@ class VL53L0X:
         self._write_byte(0xFF, 0x00)
         self._write_byte(0x80, 0x00)
 
+        # Enable SIGNAL_RATE_MSRC and SIGNAL_RATE_PRE_RANGE limit checks
         config_control = self._read_byte(_REG_MSRC_CONFIG_CONTROL)
         self._write_byte(_REG_MSRC_CONFIG_CONTROL, config_control | 0x12)
 
-        self._write_word(_REG_FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT, 32)
+        # Set signal rate limit to 0.25 MCPS (million counts per second)
+        self._write_word(_REG_FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT, 32)  # 0.25 * (1 << 7)
 
         self._write_byte(_REG_SYSTEM_SEQUENCE_CONFIG, 0xFF)
 
+        # SPADs init
         self._spad_init()
 
+        # Load tuning settings
         self._load_tuning_settings()
 
+        
         self._write_byte(_REG_SYSTEM_INTERRUPT_CONFIG_GPIO, 0x04)
         gpio_hv_mux = self._read_byte(_REG_GPIO_HV_MUX_ACTIVE_HIGH)
         self._write_byte(_REG_GPIO_HV_MUX_ACTIVE_HIGH, gpio_hv_mux & ~0x10)
         self._write_byte(_REG_SYSTEM_INTERRUPT_CLEAR, 0x01)
 
+       
         self._write_byte(_REG_SYSTEM_SEQUENCE_CONFIG, 0xE8)
 
+       
         self._write_byte(_REG_SYSTEM_SEQUENCE_CONFIG, 0x01)
         self._perform_single_ref_calibration(0x40)
         self._write_byte(_REG_SYSTEM_SEQUENCE_CONFIG, 0x02)
         self._perform_single_ref_calibration(0x00)
 
+        
         self._write_byte(_REG_SYSTEM_SEQUENCE_CONFIG, 0xE8)
 
     def _spad_init(self):
@@ -166,6 +178,11 @@ class VL53L0X:
         self._write_byte(_REG_SYSRANGE_START, 0x00)
 
     def read(self):
+        """
+        Perform a single ranging measurement.
+        Returns distance in millimeters (mm).
+        Returns None if measurement is invalid.
+        """
         self._write_byte(0x80, 0x01)
         self._write_byte(0xFF, 0x01)
         self._write_byte(0x00, 0x00)
@@ -190,15 +207,40 @@ class VL53L0X:
             if timeout > 500:
                 raise RuntimeError("VL53L0X measurement timeout")
 
+        
         range_mm = self._read_word(_REG_RESULT_RANGE_STATUS + 10)
 
         self._write_byte(_REG_SYSTEM_INTERRUPT_CLEAR, 0x01)
 
+       
         if range_mm >= 8190:
             return None
 
         return range_mm
 
     def change_address(self, new_address):
+        """Change the I2C address of the sensor (useful for multi-sensor setups)."""
         self._write_byte(_REG_I2C_SLAVE_DEVICE_ADDRESS, new_address & 0x7F)
         self.address = new_address
+
+
+
+if __name__ == "__main__":
+   
+    i2c = I2C(0, scl=Pin(22), sda=Pin(21), freq=400000)
+
+    print("Scanning I2C bus...")
+    devices = i2c.scan()
+    print(f"Found devices: {[hex(d) for d in devices]}")
+
+    sensor = VL53L0X(i2c)
+    print("VL53L0X initialized successfully!")
+
+    print("\nStarting distance measurements (Ctrl+C to stop):\n")
+    while True:
+        distance = sensor.read()
+        if distance is None:
+            print("Out of range / No object detected")
+        else:
+            print(f"Distance: {distance} mm  ({distance / 10:.1f} cm)")
+        time.sleep_ms(200)
