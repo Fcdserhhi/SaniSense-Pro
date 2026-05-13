@@ -85,7 +85,7 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 The team developed a custom web interface hosted directly on the ESP32-WROOM. It is a mobile-responsive dashboard with a 3-second refresh rate for:
 1. Occupancy Status: Stalls and Basins.
 2. Environmental Health: Live Odor/Air Quality readings.
-3. Inventory Alerts: Soap and Dispenser levels.
+3. Inventory Alerts: Soap,Sanitizer,Period pads and Dispenser levels.
 4. Notifications: Emergency SOS and Maintenance requests.
 
 ## Installation Steps
