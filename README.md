@@ -16,15 +16,17 @@ We built SaniSense to move from "scheduled" cleaning to an on-demand model. Usin
 | IR Sensor 1 | Entry detection |
 | IR Sensor 2 | Exit detection |
 | IR Sensor 3 | Basin approach detection |
-| IR Sensor 4 | Dispenser stock detection |
+| IR Sensor 4 | Consumable stock detection (soap, sanitizer, pads, dispenser items) |
 | Water Sensor | Cleaning verification |
 | Active Buzzer | Alerts (SOS, cleaning, restock) |
 | Green LED | Vacant indicator |
 | Red LED | Occupied indicator |
 | Yellow LED | Warning indicator |
-| SOS Button | Emergency alert |
-| Cleaning Button | Trigger cleaning mode |
-| Maintenance Button | Trigger maintenance mode |
+| Button-1 (SOS) | Emergency alert |
+| Button-2 (Cleaning) | Trigger cleaning mode |
+| Button-3 (Maintenance) | Trigger maintenance mode |
+| Resistor 220Ω | Limit current fLow to LED |
+| Breadboards | Connection & power rail |
 
 ## Software Required
 
