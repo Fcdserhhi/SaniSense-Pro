@@ -63,6 +63,7 @@ It uses sensors to detect restroom usage patterns, identify poor hygiene conditi
 | Button-1 (SOS) | Emergency alert |
 | Button-2 (Cleaning) | Trigger cleaning mode |
 | Button-3 (Maintenance) | Trigger maintenance mode |
+|Power Adapter 5v | 5v Power Supply |
 | Resistor 220Ω | Limit current flow to LED |
 | Breadboards | Connection & power rail |
 | Jumper Wires | Connecting components |
@@ -131,10 +132,11 @@ The dashboard starts automatically after boot.
 
 | Component | Connection |
 |---|---|
-| ESP32 5V Supply (+) | Breadboard positive rail |
+| Power Adapter 5V Supply (+) | Breadboard positive rail |
+| Power Adapter GND (-) | Breadboard negative rail |
 | ESP32 GND | Common breadboard ground |
 | VL53L0X VIN | ESP32 3.3V |
-| IR Sensors VCC | 3.3V rail |
+| IR Sensors VCC | 5V rail |
 | MQ135 VCC | 5V rail |
 | Water Sensor VCC | 5V rail |
 
