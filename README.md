@@ -1,10 +1,14 @@
 ## SaniSense: Smart Restroom Ecosystem
 
 ## Problem  
-Most restrooms are cleaned on a fixed schedule (e.g., every 3 hours), which is inefficient. This model doesn't account for heavy foot traffic or sudden hygiene drops. It leads to wasted resources when bathrooms are clean and poor conditions when they are busy.
+
+Public restrooms frequently suffer from poor hygiene maintenance, delayed cleaning response, overcrowding, and lack of real-time monitoring. Existing systems rely heavily on manual inspection, making it difficult to ensure cleanliness, hygiene compliance, consumable availability, and timely maintenance.
+There is a need for an intelligent, low-cost, real-time restroom monitoring system that can automatically track occupancy, odor levels, hygiene conditions, cleaning activities, and maintenance requirements to improve sanitation standards, resource management, and user safety in public facilities.
  
 ## Solution 
-We built SaniSense to move from "scheduled" cleaning to an on-demand model. Using an ESP32-WROOM and a suite of sensors, we track real-time usage and hygiene levels to trigger maintenance only when it's actually needed.
+
+The proposed solution is a **Smart Autonomous Restroom Monitoring System** built using ESP32 and IoT sensors. The system monitors restroom occupancy, odor levels, hygiene conditions, wash basin usage, consumable stock availability, and maintenance requirements in real time.
+It uses sensors to detect restroom usage patterns, identify poor hygiene conditions, verify cleaning activities through water usage monitoring, and generate SOS or maintenance alerts when required. A live web dashboard provides real-time analytics and restroom status updates, enabling efficient sanitation management, faster maintenance response, and improved public hygiene standards.
 
 ## Hardware Required
 
@@ -25,7 +29,7 @@ We built SaniSense to move from "scheduled" cleaning to an on-demand model. Usin
 | Button-1 (SOS) | Emergency alert |
 | Button-2 (Cleaning) | Trigger cleaning mode |
 | Button-3 (Maintenance) | Trigger maintenance mode |
-| Resistor 220Ω | Limit current fLow to LED |
+| Resistor 220Ω | Limit current flow to LED |
 | Breadboards | Connection & power rail |
 
 ## Software Required
