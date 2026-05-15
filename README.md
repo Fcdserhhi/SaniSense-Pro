@@ -182,3 +182,6 @@ We used an MQ135 sensor to monitor odor and air quality. The team developed a we
 
 4. The Verification Loop (Water Sensor)
 To ensure staff accountability, we added a Water Level Sensor. When the "Clean" button is pressed, the system captures a moisture baseline. The Hygiene Score only resets if the sensor detects actual water usage, proving that cleaning took place.
+
+
+TEAM-AFK
